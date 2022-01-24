@@ -17,7 +17,7 @@ class RoomsController < ApplicationController
     @room = Room.new
     @message = Message.new
 
-    @messages = @single_room.messages.order(created_at: :desc)
+    @messages = @single_room.messages.order(created_at: :asc)
     render 'index'
   end
 end

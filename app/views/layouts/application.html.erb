@@ -5,29 +5,28 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <style>
-  <%= ".msg-#{current_user&.id}" %> {
-  background-color: #007bff !important;
-  padding: 10px;
-  }
-  <%= ".cont-#{current_user&.id}" %> {
-  display: flex;
-  justify-content: flex-end
-  }
-</style>
+    <style>
+      <%= ".msg-#{current_user&.id}" %> {
+      background-color: #007bff !important;
+      padding: 10px;
+      }
+      <%= ".cont-#{current_user&.id}" %> {
+      display: flex;
+      justify-content: flex-end
+      }
+    </style>
   </head>
-
   <body>
-  <% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+    <%= render "layouts/navbar"%>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
