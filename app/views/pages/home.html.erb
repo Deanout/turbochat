@@ -3,6 +3,7 @@
 
 
 <% if current_user %>
+<%= link_to "Start Chatting", rooms_path %>
 <%= button_to "Logout", destroy_user_session_path, method: :delete %>
 <% else %>
 <%= link_to "Sign up", new_user_registration_path %>

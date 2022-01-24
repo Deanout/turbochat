@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="messages-container col-md-4 col-sm-4">
+    <h5> Hi <%= @current_user.email %> </h5>
+    <h4> Users </h4>
+    <div>
+      <%= turbo_stream_from "users" %>
+      <div id="users">
+        <%= render @users %>
+      </div>
+    </div>
+    <h4> Rooms </h4>
+    <%= render partial: "layouts/new_room_form" %>
+    <div>
+      <%= turbo_stream_from "rooms" %>
+      <div id="rooms">
+        <%= render @rooms %>
+      </div>
+    </div>
+  </div>
+
+<div class="col-md-8 col-sm-8 bg-dark text-light">
+  <% if @single_room %>
+    <h4 class="text-center"> 
+        <%= @user&.email || @single_room.name %> 
+    </h4>
+    <%= turbo_stream_from @single_room %>
+  <div id="messages">
+    <%= render @messages %>
+  </div>
+  <%= render partial: 'layouts/new_message_form' %>
+    <% end %>
+</div>
