@@ -1,11 +1,12 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-
-<% if current_user %>
-<%= link_to "Start Chatting", rooms_path %>
-<%= button_to "Logout", destroy_user_session_path, method: :delete %>
-<% else %>
-<%= link_to "Sign up", new_user_registration_path %>
-<%= link_to "Login", new_user_session_path %>
-<% end %>
+<div class="container">
+  <h1>Chatter</h1>
+  <p>Chatrooms + Direct Messages</p>
+  <p>Rails 7 Demo</p>
+  <% if current_user %>
+    <%= link_to "Start Chatting", rooms_path, turbo:'false' %>
+    <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path %>
+    <%= link_to "Login", new_user_session_path %>
+  <% end %>
+</div>

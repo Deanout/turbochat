@@ -7,6 +7,9 @@ export default class extends Controller {
     messages.addEventListener("DOMNodeInserted", this.resetScroll);
     this.resetScroll(messages);
   }
+  disconnect() {
+    messages.removeEventListener("DOMNodeInserted", this.resetScroll);
+  }
   resetScroll() {
     messages.scrollTop = messages.scrollHeight - messages.clientHeight;
   }
