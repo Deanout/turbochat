@@ -15,3 +15,7 @@ https://www.honeybadger.io/blog/chat-app-rails-actioncable-turbo/
 
 Making Stimulus Work
 https://blog.minthesize.com/stimulus-reflex-importmaps
+
+
+## User Avatars
+sudo apt install libvips

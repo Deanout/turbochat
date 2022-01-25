@@ -6,4 +6,23 @@ class User < ApplicationRecord
   scope :all_except, ->(user) { where.not(id: user) }
   after_create_commit { broadcast_append_to 'users' }
   has_many :messages, dependent: :destroy
+  has_one_attached :pfp
+
+  after_commit :add_default_pfp, on: %i[create update]
+
+  def pfp_thumbnail
+    pfp.variant(resize_to_limit: [150, 150]).processed
+  end
+
+  private
+
+  def add_default_pfp
+    return if pfp.attached?
+
+    pfp.attach(
+      io: File.open(Rails.root.join('app', 'assets', 'images', 'default_profile.jpg')),
+      filename: 'default_profile.jpg',
+      content_type: 'image/png'
+    )
+  end
 end
