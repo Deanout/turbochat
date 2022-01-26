@@ -38,7 +38,7 @@ body {
 }
 
 #side_panel {
-  height: 100vh;
+  height: calc(100vh - 55px);
   margin-right: 0px !important;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -64,4 +64,29 @@ body {
   margin-bottom: 10px;
   background-color: #555555;
   padding: 10px;
+}
+
+.user_row {
+  height: 50px;
+  padding: 10px;
+  border-bottom: 1px solid #555555;
+}
+
+.username {
+  overflow: hidden;
+}
+
+.chat_pfp {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.user_list_item {
+  height: 55px;
+  background-color: #343a40 !important;
+}
+.room_list_item {
+  height: 55px;
+  background-color: #343a40 !important;
 }
