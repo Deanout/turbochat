@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @room = Room.new
     @room_name = get_name(@user, current_user)
     @single_room = Room.where(name: @room_name).first || Room.create_private_room([@user, @current_user], @room_name)
+    current_user.update_without_password(room_id: @single_room.id)
 
     @message = Message.new
     @messages = @single_room.messages.order(created_at: :asc)

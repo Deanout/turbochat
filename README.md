@@ -1,5 +1,7 @@
 # TurboChat
 
+![Demo Image of Main Application](https://github.com/deanout/turbochat/blob/main/Turbochat.png?raw=true)
+
 ## Development Setup
 Commands that were run during development:
 
@@ -15,3 +17,7 @@ https://www.honeybadger.io/blog/chat-app-rails-actioncable-turbo/
 
 Making Stimulus Work
 https://blog.minthesize.com/stimulus-reflex-importmaps
+
+
+## User Avatars
+sudo apt install libvips

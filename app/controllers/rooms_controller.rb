@@ -12,6 +12,8 @@ class RoomsController < ApplicationController
 
   def show
     @single_room = Room.find(params[:id])
+    current_user.update_without_password(room_id: @single_room.id)
+
     @rooms = Room.public_rooms
     @users = User.all_except(current_user)
     @room = Room.new

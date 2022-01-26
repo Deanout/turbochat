@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
+  default_url_options host: 'localhost:3000'
+
   resources :rooms do
     resources :messages
   end
   root 'pages#home'
-  devise_scope :user do
-    # Redirests signing out users back to sign-in
-    get 'users', to: 'devise/sessions#new'
-  end
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
   get 'user/:id', to: 'users#show', as: 'user'
-  devise_for :users
 end
