@@ -1,5 +1,7 @@
 # TurboChat
 
+![Demo Image of Main Application](https://github.com/deanout/turbochat/blob/main/Turbochat.png?raw=true)
+
 ## Development Setup
 Commands that were run during development:
 
