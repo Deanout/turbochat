@@ -6,4 +6,5 @@
 <li class="list-group-item d-flex align-items-center user_list_item <%= isActive %>">
   <%= link_to image_tag(user.chat_pfp, class: 'chat_pfp'), user %>
   <%= link_to user.email, user, class:'mr-auto username' %>
+  <%= link_to "Call", "#", data: {controller: "rooms", action:"rooms#call_user"} %>
 </li>

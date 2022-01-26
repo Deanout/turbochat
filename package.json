@@ -79,6 +79,7 @@
     "semver": "^6.3.0",
     "semver-compare": "^1.0.0",
     "serialize-error": "^7.0.1",
+    "socket.io": "^4.4.1",
     "sprintf-js": "^1.1.2",
     "string_decoder": "^1.1.1",
     "sumchecker": "^3.0.1",

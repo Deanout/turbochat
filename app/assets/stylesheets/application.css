@@ -63,7 +63,6 @@ body {
   border-radius: 10px;
   margin-bottom: 10px;
   background-color: #555555;
-  padding: 10px;
 }
 
 .user_row {
@@ -89,4 +88,16 @@ body {
 .room_list_item {
   height: 55px;
   background-color: #343a40 !important;
+}
+
+.name {
+  margin-top: 15px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+.time {
+  padding-top: 0px;
+  margin-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
