@@ -18,6 +18,6 @@ https://www.honeybadger.io/blog/chat-app-rails-actioncable-turbo/
 Making Stimulus Work
 https://blog.minthesize.com/stimulus-reflex-importmaps
 
-
-## User Avatars
-sudo apt install libvips
+Adding Devise User Avatars
+https://deanin.com/blog/action-text/
+https://www.youtube.com/watch?v=BYvzLYRIZK4&t=334s
