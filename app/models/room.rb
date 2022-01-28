@@ -7,11 +7,7 @@ class Room < ApplicationRecord
   has_many :messages, dependent: :destroy
 
   def broadcast_if_public
-    if is_private
-      broadcast_append_to 'private_rooms'
-    else
-      broadcast_append_to 'public_rooms'
-    end
+    broadcast_append_to 'rooms' unless is_private
   end
 
   def self.create_private_room(users, room_name)
