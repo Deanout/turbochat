@@ -8,13 +8,16 @@
   "main": "main.js",
   "scripts": {
     "test": "test",
-    "start": "electron ."
+    "start": "electron .",
+    "build": "esbuild app/javascript/**.* --bundle --sourcemap --outdir=app/assets/builds --platform=node",
+    "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules"
   },
   "directories": {
     "lib": "lib",
     "test": "test"
   },
   "dependencies": {
+    "@hotwired/turbo-rails": "^7.1.1",
     "@rails/actiontext": "^7.0.1",
     "boolean": "^3.1.4",
     "buffer-crc32": "^0.2.13",
@@ -34,6 +37,7 @@
     "end-of-stream": "^1.4.4",
     "env-paths": "^2.2.1",
     "es6-error": "^4.1.1",
+    "esbuild": "^0.14.18",
     "escape-string-regexp": "^4.0.0",
     "extract-zip": "^1.7.0",
     "fd-slicer": "^1.1.0",
@@ -76,11 +80,14 @@
     "responselike": "^1.0.2",
     "roarr": "^2.15.4",
     "safe-buffer": "^5.1.2",
+    "sass": "^1.49.7",
     "semver": "^6.3.0",
     "semver-compare": "^1.0.0",
     "serialize-error": "^7.0.1",
     "socket.io": "^4.4.1",
     "sprintf-js": "^1.1.2",
+    "stimulus": "^3.0.1",
+    "stimulus_reflex": "^3.5.0-pre8",
     "string_decoder": "^1.1.1",
     "sumchecker": "^3.0.1",
     "to-readable-stream": "^1.0.0",
