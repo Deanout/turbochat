@@ -1,4 +1,5 @@
-<div id="chatroom_container" class="row bg-dark text-light">
+<div id="chatroom_container" class="row bg-dark text-light"
+data-appearing-on>
   <div id="side_panel" class="col-md-4 col-sm-4">
     <h5> Hi <%= @current_user.email %> </h5>
     <h4> Users </h4>
@@ -21,7 +22,7 @@
   class="col-md-8 col-sm-8 bg-dark text-light"
 >
     <% if @single_room %>
-      <div id="single_room">
+      <div id="single_room" data-room-id="<%= @single_room.id %>">
         <h4 class="text-center">
           <%= @user&.email || @single_room.name %>
         </h4>

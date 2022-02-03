@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus";
+import Call from "../streaming/screensharing";
 
 // Connects to data-controller="rooms"
 export default class extends Controller {
@@ -7,6 +8,6 @@ export default class extends Controller {
   }
 
   call_user() {
-    console.log("Calling user");
+    Call(this.element.dataset.user_id);
   }
 }

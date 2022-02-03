@@ -4,7 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   scope :all_except, ->(user) { where.not(id: user) }
+
+  enum status: %i[online away offline]
+
   after_create_commit { broadcast_append_to 'users' }
+  after_update_commit { broadcast_update }
+
   has_many :messages, dependent: :destroy
   has_one :room
   has_one_attached :pfp
@@ -19,7 +24,24 @@ class User < ApplicationRecord
     pfp.variant(resize_to_limit: [50, 50]).processed
   end
 
+  def status_to_css
+    case status
+    when 'online'
+      'bg-success'
+    when 'away'
+      'bg-warning'
+    when 'offline'
+      'bg-dark'
+    else
+      'bg-dark'
+    end
+  end
+
   private
+
+  def broadcast_update
+    broadcast_replace_to 'user_status', partial: 'users/status', user: self
+  end
 
   def add_default_pfp
     return if pfp.attached?

@@ -1,0 +1,5 @@
+<%= turbo_frame_tag "user_status" %>
+<span class="position-absolute top-10 start-10 translate-middle p-2 border border-light rounded-circle <%= user.status_to_css %>"
+    style="top: 25%; right: 82%;"
+    id="<%= dom_id(user)%>"
+  >
